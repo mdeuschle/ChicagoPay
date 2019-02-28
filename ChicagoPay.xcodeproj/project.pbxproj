@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		A8AA422722264B0600A445D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AA422622264B0600A445D4 /* AppDelegate.swift */; };
-		A8AA422922264B0600A445D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AA422822264B0600A445D4 /* ViewController.swift */; };
 		A8AA422C22264B0600A445D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8AA422A22264B0600A445D4 /* Main.storyboard */; };
 		A8AA422E22264B1400A445D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8AA422D22264B1400A445D4 /* Assets.xcassets */; };
 		A8AA423122264B1400A445D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8AA422F22264B1400A445D4 /* LaunchScreen.storyboard */; };
 		A8AA423C22264B1600A445D4 /* ChicagoPayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AA423B22264B1600A445D4 /* ChicagoPayTests.swift */; };
 		A8AA424722264B1600A445D4 /* ChicagoPayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AA424622264B1600A445D4 /* ChicagoPayUITests.swift */; };
+		A8AA4259222650FF00A445D4 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AA4258222650FF00A445D4 /* RootVC.swift */; };
+		A8AA425B2227AC1D00A445D4 /* Salary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AA425A2227AC1D00A445D4 /* Salary.swift */; };
+		A8AA425D2227ACD900A445D4 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AA425C2227ACD900A445D4 /* WebService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,6 @@
 /* Begin PBXFileReference section */
 		A8AA422322264B0600A445D4 /* ChicagoPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChicagoPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8AA422622264B0600A445D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A8AA422822264B0600A445D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A8AA422B22264B0600A445D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A8AA422D22264B1400A445D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8AA423022264B1400A445D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,9 @@
 		A8AA424222264B1600A445D4 /* ChicagoPayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChicagoPayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8AA424622264B1600A445D4 /* ChicagoPayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChicagoPayUITests.swift; sourceTree = "<group>"; };
 		A8AA424822264B1600A445D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8AA4258222650FF00A445D4 /* RootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
+		A8AA425A2227AC1D00A445D4 /* Salary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Salary.swift; sourceTree = "<group>"; };
+		A8AA425C2227ACD900A445D4 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +101,10 @@
 		A8AA422522264B0600A445D4 /* ChicagoPay */ = {
 			isa = PBXGroup;
 			children = (
-				A8AA422622264B0600A445D4 /* AppDelegate.swift */,
-				A8AA422822264B0600A445D4 /* ViewController.swift */,
-				A8AA422A22264B0600A445D4 /* Main.storyboard */,
-				A8AA422D22264B1400A445D4 /* Assets.xcassets */,
-				A8AA422F22264B1400A445D4 /* LaunchScreen.storyboard */,
+				A8AA42572226502B00A445D4 /* Model */,
+				A8AA42562226502400A445D4 /* View */,
+				A8AA42552226501400A445D4 /* Controller */,
+				A8AA425422264FD000A445D4 /* Support Files */,
 				A8AA423222264B1400A445D4 /* Info.plist */,
 			);
 			path = ChicagoPay;
@@ -123,6 +126,41 @@
 				A8AA424822264B1600A445D4 /* Info.plist */,
 			);
 			path = ChicagoPayUITests;
+			sourceTree = "<group>";
+		};
+		A8AA425422264FD000A445D4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A8AA422622264B0600A445D4 /* AppDelegate.swift */,
+				A8AA422D22264B1400A445D4 /* Assets.xcassets */,
+				A8AA422F22264B1400A445D4 /* LaunchScreen.storyboard */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		A8AA42552226501400A445D4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A8AA4258222650FF00A445D4 /* RootVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A8AA42562226502400A445D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A8AA422A22264B0600A445D4 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A8AA42572226502B00A445D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A8AA425A2227AC1D00A445D4 /* Salary.swift */,
+				A8AA425C2227ACD900A445D4 /* WebService.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +294,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8AA422922264B0600A445D4 /* ViewController.swift in Sources */,
+				A8AA4259222650FF00A445D4 /* RootVC.swift in Sources */,
+				A8AA425B2227AC1D00A445D4 /* Salary.swift in Sources */,
+				A8AA425D2227ACD900A445D4 /* WebService.swift in Sources */,
 				A8AA422722264B0600A445D4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
