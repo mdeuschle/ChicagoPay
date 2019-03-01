@@ -11,9 +11,20 @@ import Foundation
 struct WebService {
     static let shared = WebService()
     private init() {}
-    
-    func downloadSalaries(completion: @escaping (Bool, [Salary]?) -> Void) {
-        
-        
+    func dataTask(completion: @escaping (Result<Data>) -> Void) {
+        let urlString = "https://data.cityofchicago.org/resource/xzkq-xp2w.json?$limit=5&$$app_token=LFuu36jqve2Td9BWBffSS1iJm"
+        guard let url = URL(string: urlString) else { return }
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            let result: Result<Data>
+            if data != nil && error == nil {
+                result = .success(data!)
+            } else {
+                result = .failure(error)
+            }
+            completion(result)
+        }
+        task.resume()
     }
 }
+
+

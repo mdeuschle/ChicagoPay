@@ -9,15 +9,16 @@
 import UIKit
 
 class RootVC: UITableViewController {
+    
+    let store = SalaryStore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        DispatchQueue.main.async {
+            self.store.downloadSalaries { salaries in
+                print(salaries)
+            }
+        }
     }
 
     // MARK: - Table view data source

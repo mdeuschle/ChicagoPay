@@ -16,6 +16,8 @@
 		A8AA4259222650FF00A445D4 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AA4258222650FF00A445D4 /* RootVC.swift */; };
 		A8AA425B2227AC1D00A445D4 /* Salary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AA425A2227AC1D00A445D4 /* Salary.swift */; };
 		A8AA425D2227ACD900A445D4 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AA425C2227ACD900A445D4 /* WebService.swift */; };
+		A8AA425F2228F62200A445D4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AA425E2228F62200A445D4 /* Result.swift */; };
+		A8AA42612228FC8E00A445D4 /* SalaryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AA42602228FC8E00A445D4 /* SalaryStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		A8AA4258222650FF00A445D4 /* RootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
 		A8AA425A2227AC1D00A445D4 /* Salary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Salary.swift; sourceTree = "<group>"; };
 		A8AA425C2227ACD900A445D4 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		A8AA425E2228F62200A445D4 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		A8AA42602228FC8E00A445D4 /* SalaryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,8 @@
 			children = (
 				A8AA425A2227AC1D00A445D4 /* Salary.swift */,
 				A8AA425C2227ACD900A445D4 /* WebService.swift */,
+				A8AA425E2228F62200A445D4 /* Result.swift */,
+				A8AA42602228FC8E00A445D4 /* SalaryStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -295,7 +301,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8AA4259222650FF00A445D4 /* RootVC.swift in Sources */,
+				A8AA425F2228F62200A445D4 /* Result.swift in Sources */,
 				A8AA425B2227AC1D00A445D4 /* Salary.swift in Sources */,
+				A8AA42612228FC8E00A445D4 /* SalaryStore.swift in Sources */,
 				A8AA425D2227ACD900A445D4 /* WebService.swift in Sources */,
 				A8AA422722264B0600A445D4 /* AppDelegate.swift in Sources */,
 			);
