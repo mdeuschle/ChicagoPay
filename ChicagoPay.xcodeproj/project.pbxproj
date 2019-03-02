@@ -162,9 +162,9 @@
 			isa = PBXGroup;
 			children = (
 				A8AA425A2227AC1D00A445D4 /* Salary.swift */,
+				A8AA42602228FC8E00A445D4 /* SalaryStore.swift */,
 				A8AA425C2227ACD900A445D4 /* WebService.swift */,
 				A8AA425E2228F62200A445D4 /* Result.swift */,
-				A8AA42602228FC8E00A445D4 /* SalaryStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
