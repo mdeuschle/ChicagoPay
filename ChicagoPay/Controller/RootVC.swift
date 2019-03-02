@@ -19,6 +19,7 @@ class RootVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Chicago Pay"
         self.store.downloadSalaries { [weak self] salaries in
             DispatchQueue.main.async {
                 if let salaries = salaries {
@@ -37,10 +38,13 @@ class RootVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+        cell.accessoryType = .disclosureIndicator
+        cell.backgroundColor = #colorLiteral(red: 0.1298420429, green: 0.1298461258, blue: 0.1298439503, alpha: 1)
         let salary = salaries[indexPath.row]
+        cell.textLabel?.textColor = .white
         cell.textLabel?.text = salary.name
+        cell.detailTextLabel?.textColor = #colorLiteral(red: 0.4508578777, green: 0.9882974029, blue: 0.8376303315, alpha: 1)
         cell.detailTextLabel?.text = salary.annual_salary
         return cell
     }
-    
 }
