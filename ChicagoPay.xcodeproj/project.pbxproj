@@ -18,6 +18,8 @@
 		A8AA425D2227ACD900A445D4 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AA425C2227ACD900A445D4 /* WebService.swift */; };
 		A8AA425F2228F62200A445D4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AA425E2228F62200A445D4 /* Result.swift */; };
 		A8AA42612228FC8E00A445D4 /* SalaryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AA42602228FC8E00A445D4 /* SalaryStore.swift */; };
+		A8AA4264222B9F6900A445D4 /* RootCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AA4262222B9F6900A445D4 /* RootCell.swift */; };
+		A8AA4265222B9F6900A445D4 /* RootCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8AA4263222B9F6900A445D4 /* RootCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		A8AA425C2227ACD900A445D4 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		A8AA425E2228F62200A445D4 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		A8AA42602228FC8E00A445D4 /* SalaryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryStore.swift; sourceTree = "<group>"; };
+		A8AA4262222B9F6900A445D4 /* RootCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCell.swift; sourceTree = "<group>"; };
+		A8AA4263222B9F6900A445D4 /* RootCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				A8AA422A22264B0600A445D4 /* Main.storyboard */,
+				A8AA4262222B9F6900A445D4 /* RootCell.swift */,
+				A8AA4263222B9F6900A445D4 /* RootCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -274,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8AA423122264B1400A445D4 /* LaunchScreen.storyboard in Resources */,
+				A8AA4265222B9F6900A445D4 /* RootCell.xib in Resources */,
 				A8AA422E22264B1400A445D4 /* Assets.xcassets in Resources */,
 				A8AA422C22264B0600A445D4 /* Main.storyboard in Resources */,
 			);
@@ -302,6 +309,7 @@
 			files = (
 				A8AA4259222650FF00A445D4 /* RootVC.swift in Sources */,
 				A8AA425F2228F62200A445D4 /* Result.swift in Sources */,
+				A8AA4264222B9F6900A445D4 /* RootCell.swift in Sources */,
 				A8AA425B2227AC1D00A445D4 /* Salary.swift in Sources */,
 				A8AA42612228FC8E00A445D4 /* SalaryStore.swift in Sources */,
 				A8AA425D2227ACD900A445D4 /* WebService.swift in Sources */,
