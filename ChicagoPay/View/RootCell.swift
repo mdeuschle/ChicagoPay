@@ -15,8 +15,8 @@ class RootCell: UITableViewCell {
     @IBOutlet weak var salaryLabel: UILabel!
     
     func configure(_ salary :Salary) {
-        nameLabel.text = salary.name
-        jobTitleLabel.text = salary.job_titles
-        salaryLabel.text = salary.annual_salary
+        nameLabel.text = salary.name?.lowercased().capitalized
+        jobTitleLabel.text = salary.job_titles?.lowercased().capitalized
+        salaryLabel.text = salary.annual_salary?.dollars
     }
 }
