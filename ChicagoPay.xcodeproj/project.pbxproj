@@ -23,6 +23,7 @@
 		A8E02196222C5BCB004D29A0 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E02195222C5BCB004D29A0 /* String+.swift */; };
 		A8E02198222C9F9E004D29A0 /* SalaryHourlySegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E02197222C9F9E004D29A0 /* SalaryHourlySegmentControl.swift */; };
 		A8E0219A222CB1D7004D29A0 /* SearchBar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E02199222CB1D7004D29A0 /* SearchBar+.swift */; };
+		A8E0219C222CD809004D29A0 /* SalaryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0219B222CD809004D29A0 /* SalaryType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		A8E02195222C5BCB004D29A0 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		A8E02197222C9F9E004D29A0 /* SalaryHourlySegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryHourlySegmentControl.swift; sourceTree = "<group>"; };
 		A8E02199222CB1D7004D29A0 /* SearchBar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchBar+.swift"; sourceTree = "<group>"; };
+		A8E0219B222CD809004D29A0 /* SalaryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				A8AA42602228FC8E00A445D4 /* SalaryStore.swift */,
 				A8AA425C2227ACD900A445D4 /* WebService.swift */,
 				A8AA425E2228F62200A445D4 /* Result.swift */,
+				A8E0219B222CD809004D29A0 /* SalaryType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				A8E02198222C9F9E004D29A0 /* SalaryHourlySegmentControl.swift in Sources */,
 				A8AA42612228FC8E00A445D4 /* SalaryStore.swift in Sources */,
 				A8AA425D2227ACD900A445D4 /* WebService.swift in Sources */,
+				A8E0219C222CD809004D29A0 /* SalaryType.swift in Sources */,
 				A8AA422722264B0600A445D4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

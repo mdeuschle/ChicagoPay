@@ -9,8 +9,8 @@
 import Foundation
 
 struct SalaryStore {
-    func downloadSalaries(completion: @escaping ([Salary]?) -> Void) {
-        WebService.shared.dataTask { result in
+    func downloadSalaries(for salaryType: SalaryType, completion: @escaping ([Salary]?) -> Void) {
+        WebService.shared.dataTask(for: salaryType) { result in
             switch result {
             case let .success(data):
                 let json = try? JSONDecoder().decode([Salary].self, from: data)

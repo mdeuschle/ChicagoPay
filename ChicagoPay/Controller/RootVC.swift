@@ -11,6 +11,7 @@ import UIKit
 class RootVC: UITableViewController {
     
     let store = SalaryStore()
+    private var salaryType = SalaryType.salary
     
     private var salaries = [Salary]() {
         didSet {
@@ -21,14 +22,9 @@ class RootVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Chicago Pay"
-        downloadSalaries()
+        downloadSalaries(for: .salary)
         configureTableView()
         configureSearchBar()
-        //
-//        // To change UISegmentedControl color only when appeared in UISearchBar
-//        UISegmentedControl.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .red
-//
-//        self.navigationItem.titleView = searchBar
     }
 
     private func configureSearchBar() {
@@ -52,8 +48,8 @@ class RootVC: UITableViewController {
         tableView.estimatedRowHeight = 80.0
     }
     
-    private func downloadSalaries() {
-        self.store.downloadSalaries { [weak self] salaries in
+    private func downloadSalaries(for salaryType: SalaryType) {
+        self.store.downloadSalaries(for: salaryType) { [weak self] salaries in
             DispatchQueue.main.async {
                 if let salaries = salaries {
                     self?.salaries = salaries
@@ -73,7 +69,7 @@ class RootVC: UITableViewController {
             return UITableViewCell()
         }
         let salary = salaries[indexPath.row]
-        cell.configure(salary)
+        cell.configure(for: salaryType, salary: salary)
         return cell
     }
 }
@@ -95,6 +91,7 @@ extension RootVC: UISearchResultsUpdating, UISearchControllerDelegate {
 extension RootVC: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        print(selectedScope)
+        salaryType = SalaryType(rawValue: selectedScope) ?? .salary
+        downloadSalaries(for: salaryType)
     }
 }

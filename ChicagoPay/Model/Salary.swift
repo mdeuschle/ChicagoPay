@@ -15,11 +15,6 @@ struct Salary: Decodable {
     let job_titles: String?
     let name: String?
     let salary_or_hourly: String?
+    let hourly_rate: String?
 }
 
-//"annual_salary": "101442.00",
-//"department": "POLICE",
-//"full_or_part_time": "F",
-//"job_titles": "SERGEANT",
-//"name": "AARON,  JEFFERY M",
-//"salary_or_hourly": "Salary"
