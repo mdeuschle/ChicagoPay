@@ -11,13 +11,20 @@ import UIKit
 class RootVC: UITableViewController {
     
     let store = SalaryStore()
-    private var salaryType = SalaryType.salary
-    
+    lazy var salaryType = SalaryType.salary
     private var salaries = [Salary]() {
         didSet {
             tableView.reloadData()
         }
     }
+    
+    private lazy var spinner: UIActivityIndicatorView = {
+        let _spinner = UIActivityIndicatorView(style: .whiteLarge)
+        let point = CGPoint(x: view.bounds.midX,
+                            y: view.bounds.midY / 2)
+        _spinner.center = point
+        return _spinner
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +32,9 @@ class RootVC: UITableViewController {
         downloadSalaries(for: .salary)
         configureTableView()
         configureSearchBar()
+        view.addSubview(spinner)
     }
-
+    
     private func configureSearchBar() {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
@@ -49,10 +57,14 @@ class RootVC: UITableViewController {
     }
     
     private func downloadSalaries(for salaryType: SalaryType) {
+        spinner.startAnimating()
+        tableView.allowsSelection = false
         self.store.downloadSalaries(for: salaryType) { [weak self] salaries in
             DispatchQueue.main.async {
                 if let salaries = salaries {
                     self?.salaries = salaries
+                    self?.spinner.stopAnimating()
+                    self?.tableView.allowsSelection = true
                 }
             }
         }
@@ -77,14 +89,14 @@ class RootVC: UITableViewController {
 extension RootVC: UISearchResultsUpdating, UISearchControllerDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         searchController.searchBar.setText(color: .white)
-//        searchController.searchBar.tintColor = color?.dark.contrast
-//        if let text = searchController.searchBar.text, !text.isEmpty {
-//            departmentTitles = PayrollService.departmentTitles(for: payrolls).filter {
-//                $0.lowercased().contains(text.lowercased())
-//            }
-//        } else {
-//            departmentTitles = PayrollService.departmentTitles(for: payrolls)
-//        }
+        //        searchController.searchBar.tintColor = color?.dark.contrast
+        //        if let text = searchController.searchBar.text, !text.isEmpty {
+        //            departmentTitles = PayrollService.departmentTitles(for: payrolls).filter {
+        //                $0.lowercased().contains(text.lowercased())
+        //            }
+        //        } else {
+        //            departmentTitles = PayrollService.departmentTitles(for: payrolls)
+        //        }
     }
 }
 
