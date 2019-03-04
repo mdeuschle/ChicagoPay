@@ -11,6 +11,7 @@ import UIKit
 class RootVC: UITableViewController {
     
     let store = SalaryStore()
+    
     private var salaries = [Salary]() {
         didSet {
             tableView.reloadData()
@@ -22,6 +23,26 @@ class RootVC: UITableViewController {
         title = "Chicago Pay"
         downloadSalaries()
         configureTableView()
+        configureSearchBar()
+        //
+//        // To change UISegmentedControl color only when appeared in UISearchBar
+//        UISegmentedControl.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .red
+//
+//        self.navigationItem.titleView = searchBar
+    }
+
+    private func configureSearchBar() {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.delegate = self
+        searchController.searchBar.delegate = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.showsScopeBar = true
+        searchController.searchBar.scopeButtonTitles = ["Salary", "Hourly"]
+        searchController.searchBar.setText(color: .white)
+        searchController.searchBar.tintColor = .darkGray
+        UISegmentedControl.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        navigationItem.searchController = searchController
     }
     
     private func configureTableView() {
@@ -54,5 +75,26 @@ class RootVC: UITableViewController {
         let salary = salaries[indexPath.row]
         cell.configure(salary)
         return cell
+    }
+}
+
+extension RootVC: UISearchResultsUpdating, UISearchControllerDelegate {
+    func updateSearchResults(for searchController: UISearchController) {
+        searchController.searchBar.setText(color: .white)
+//        searchController.searchBar.tintColor = color?.dark.contrast
+//        if let text = searchController.searchBar.text, !text.isEmpty {
+//            departmentTitles = PayrollService.departmentTitles(for: payrolls).filter {
+//                $0.lowercased().contains(text.lowercased())
+//            }
+//        } else {
+//            departmentTitles = PayrollService.departmentTitles(for: payrolls)
+//        }
+    }
+}
+
+extension RootVC: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        print(selectedScope)
     }
 }
