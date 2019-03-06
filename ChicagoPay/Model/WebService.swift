@@ -27,7 +27,7 @@ struct WebService {
     
     func url(for salaryType: SalaryType) -> URL? {
         let urlString: String
-        let baseString = "https://data.cityofchicago.org/resource/xzkq-xp2w.json?$$app_token=LFuu36jqve2Td9BWBffSS1iJm&$limit=10000&salary_or_hourly="
+        let baseString = "https://data.cityofchicago.org/resource/xzkq-xp2w.json?$$app_token=LFuu36jqve2Td9BWBffSS1iJm&$limit=5000&salary_or_hourly="
         let endpoint: String
         switch salaryType {
         case .salary:

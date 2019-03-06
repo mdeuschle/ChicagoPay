@@ -12,7 +12,13 @@ class RootVC: UITableViewController {
     
     let store = SalaryStore()
     lazy var salaryType = SalaryType.salary
+    private var isFiltering = false
     private var salaries = [Salary]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    private var filteredSalaries = [Salary]() {
         didSet {
             tableView.reloadData()
         }
@@ -29,10 +35,11 @@ class RootVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Chicago Pay"
-        downloadSalaries(for: .salary)
         configureTableView()
         configureSearchBar()
         view.addSubview(spinner)
+        downloadSalaries(for: .salary) { }
+        self.definesPresentationContext = true
     }
     
     private func configureSearchBar() {
@@ -56,7 +63,10 @@ class RootVC: UITableViewController {
         tableView.estimatedRowHeight = 80.0
     }
     
-    private func downloadSalaries(for salaryType: SalaryType) {
+    private func downloadSalaries(for salaryType: SalaryType,
+                                  completion: @escaping () -> Void) {
+        salaries = [Salary]()
+        filteredSalaries = [Salary]()
         spinner.startAnimating()
         tableView.allowsSelection = false
         self.store.downloadSalaries(for: salaryType) { [weak self] salaries in
@@ -65,6 +75,7 @@ class RootVC: UITableViewController {
                     self?.salaries = salaries
                     self?.spinner.stopAnimating()
                     self?.tableView.allowsSelection = true
+                    completion()
                 }
             }
         }
@@ -73,14 +84,15 @@ class RootVC: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return salaries.count
+        return isFiltering ? filteredSalaries.count : salaries.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RootCell", for: indexPath) as? RootCell else {
             return UITableViewCell()
         }
-        let salary = salaries[indexPath.row]
+        let row = indexPath.row
+        let salary = isFiltering ? filteredSalaries[row] : salaries[row]
         cell.configure(for: salaryType, salary: salary)
         return cell
     }
@@ -89,21 +101,32 @@ class RootVC: UITableViewController {
 extension RootVC: UISearchResultsUpdating, UISearchControllerDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         searchController.searchBar.setText(color: .white)
-        //        searchController.searchBar.tintColor = color?.dark.contrast
-        //        if let text = searchController.searchBar.text, !text.isEmpty {
-        //            departmentTitles = PayrollService.departmentTitles(for: payrolls).filter {
-        //                $0.lowercased().contains(text.lowercased())
-        //            }
-        //        } else {
-        //            departmentTitles = PayrollService.departmentTitles(for: payrolls)
-        //        }
+        if let text = searchController.searchBar.text, !text.isEmpty {
+            let trimmedText = text.lowercased().trimmingCharacters(in: .whitespaces)
+            isFiltering = true
+            filteredSalaries = salaries.filter {
+                $0.name?.lowercased().contains(trimmedText) ?? false
+            }
+        } else {
+            isFiltering = false
+            downloadSalaries(for: salaryType) { }
+        }
     }
 }
 
 extension RootVC: UISearchBarDelegate {
-    
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         salaryType = SalaryType(rawValue: selectedScope) ?? .salary
-        downloadSalaries(for: salaryType)
+        downloadSalaries(for: salaryType) {
+            if let text = searchBar.text, !text.isEmpty {
+                let trimmedText = text.lowercased().trimmingCharacters(in: .whitespaces)
+                self.isFiltering = true
+                self.filteredSalaries = self.salaries.filter {
+                    $0.name?.lowercased().contains(trimmedText) ?? false
+                }
+            } else {
+                self.isFiltering = false
+            }
+        }
     }
 }
