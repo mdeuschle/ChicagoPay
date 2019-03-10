@@ -22,6 +22,4 @@ class DetailVC: UIViewController {
         super.viewDidLoad()
 
     }
-
-
 }
