@@ -20,22 +20,32 @@ class DetailVC: UIViewController {
     @IBOutlet weak var salaryStackView: UIStackView!
     @IBOutlet weak var hourlyStackView: UIStackView!
     
-    var salary: Salary?
-
+    private var salary: Salary?
+    
+    init(salary: Salary) {
+        super.init(nibName: nil, bundle: nil)
+        self.salary = salary
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLabelText()
         configureLabelVisibility()
+        title = "Details"
     }
     
     private func configureLabelText() {
-        annualSalaryLabel.text = salary?.annual_salary
-        departmentLabel.text = salary?.department
-        fullOrPartTimeLabel.text = salary?.full_or_part_time
-        jobTitlesLabel.text = salary?.job_titles
+        annualSalaryLabel.text = salary?.annual_salary?.dollars
+        departmentLabel.text = salary?.department?.capitalized
+        fullOrPartTimeLabel.text = salary?.fullOrPartTime
+        jobTitlesLabel.text = salary?.job_titles?.capitalized
         nameLabel.text = salary?.name
         salaryOrHourlyLabel.text = salary?.salary_or_hourly
-        hourlyRateLabel.text = salary?.hourly_rate
+        hourlyRateLabel.text = salary?.hourly_rate?.dollars
     }
     
     private func configureLabelVisibility() {

@@ -18,3 +18,12 @@ struct Salary: Decodable {
     let hourly_rate: String?
 }
 
+extension Salary {
+    var fullOrPartTime: String {
+        if full_or_part_time == "F" {
+            return "Full Time"
+        } else {
+            return "Part Time"
+        }
+    }
+}

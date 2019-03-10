@@ -36,7 +36,9 @@
                             <outlet property="delegate" destination="Nu3-pC-JGU" id="1uC-sw-jfs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="m7A-xz-Bdw"/>
+                    <navigationItem key="navigationItem" id="m7A-xz-Bdw">
+                        <barButtonItem key="backBarButtonItem" title=" " id="uch-Tq-id6"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Heb-R6-9ob" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
