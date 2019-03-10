@@ -111,6 +111,9 @@ class RootVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailVC = DetailVC(nibName: nil, bundle: nil)
+        let row = indexPath.row
+        let salary = isFiltering ? filteredSalaries[row] : salaries[row]
+        detailVC.salary = salary
         navigationController?.pushViewController(detailVC, animated: true)
         searchController.searchBar.isHidden = true
     }

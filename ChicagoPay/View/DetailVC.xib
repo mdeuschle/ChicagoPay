@@ -16,9 +16,11 @@
                 <outlet property="departmentLabel" destination="KzD-Ni-LkQ" id="wfS-co-dLm"/>
                 <outlet property="fullOrPartTimeLabel" destination="aPu-pv-ffi" id="fbB-KN-vAq"/>
                 <outlet property="hourlyRateLabel" destination="IT9-21-hAh" id="GbD-ev-jCy"/>
+                <outlet property="hourlyStackView" destination="Fua-oe-Brs" id="rh2-b4-r6E"/>
                 <outlet property="jobTitlesLabel" destination="ar4-54-Ydr" id="HOe-pP-Ee3"/>
                 <outlet property="nameLabel" destination="bLK-e3-Bwr" id="wEt-fc-ZzO"/>
                 <outlet property="salaryOrHourlyLabel" destination="vVJ-tm-Nag" id="ZUF-0P-lfi"/>
+                <outlet property="salaryStackView" destination="qf5-dH-5Tw" id="gmV-TM-Z7l"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
