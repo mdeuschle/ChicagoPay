@@ -38,6 +38,7 @@ class RootVC: UITableViewController {
         title = "Chicago Pay"
         configureTableView()
         configureSearchBar()
+        configureSortButton()
         view.addSubview(spinner)
         downloadSalaries(for: .salary) { }
         self.definesPresentationContext = true
@@ -46,6 +47,19 @@ class RootVC: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         searchController.searchBar.isHidden = false
+    }
+    
+    private func configureSortButton() {
+        let sortButton = UIBarButtonItem(title: "Sort",
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(sortButtonTapped))
+        navigationItem.rightBarButtonItem = sortButton
+    }
+    
+    @objc private func sortButtonTapped() {
+        print("TAP")
+    
     }
     
     private var searchController: UISearchController = {
