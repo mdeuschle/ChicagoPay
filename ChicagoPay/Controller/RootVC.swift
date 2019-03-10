@@ -11,7 +11,8 @@ import UIKit
 class RootVC: UITableViewController {
     
     let store = SalaryStore()
-    lazy var salaryType = SalaryType.salary
+    private var salaryType = SalaryType.salary
+    private var sortType = SortType.salary
     private var isFiltering = false
     private var isSearchContollerHidden = true
     private var salaries = [Salary]() {
@@ -58,8 +59,30 @@ class RootVC: UITableViewController {
     }
     
     @objc private func sortButtonTapped() {
-        print("TAP")
-    
+        let actionSheet = UIAlertController(title: "Sort by:",
+                                            message: nil,
+                                            preferredStyle: .actionSheet)
+        let nameAction = UIAlertAction(title: "Name",
+                                       style: .default) { [weak self] action in
+                                        self?.sortType = .name
+                                        self?.downloadSalaries(for: self?.salaryType ?? .salary, completion: {})}
+        let titleAction = UIAlertAction(title: "Job Title",
+                                        style: .default) { [weak self] action in
+                                            self?.sortType = .title
+                                            self?.downloadSalaries(for: self?.salaryType ?? .salary, completion: {})}
+        let salaryAction = UIAlertAction(title: "Salary",
+                                         style: .default) { [weak self] action in
+                                            self?.sortType = .salary
+                                            self?.downloadSalaries(for: self?.salaryType ?? .salary, completion: {})}
+        let cancelAction = UIAlertAction(title: "Cancel",
+                                         style: .cancel,
+                                         handler: nil)
+        actionSheet.addAction(nameAction)
+        actionSheet.addAction(titleAction)
+        actionSheet.addAction(salaryAction)
+        actionSheet.addAction(cancelAction)
+        actionSheet.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(actionSheet, animated: true, completion: nil)
     }
     
     private var searchController: UISearchController = {
@@ -93,7 +116,7 @@ class RootVC: UITableViewController {
         filteredSalaries = [Salary]()
         spinner.startAnimating()
         tableView.allowsSelection = false
-        self.store.downloadSalaries(for: salaryType) { [weak self] salaries in
+        self.store.downloadSalaries(for: salaryType, sortType: sortType) { [weak self] salaries in
             DispatchQueue.main.async {
                 if let salaries = salaries {
                     self?.salaries = salaries

@@ -26,6 +26,7 @@
 		A8E0219C222CD809004D29A0 /* SalaryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0219B222CD809004D29A0 /* SalaryType.swift */; };
 		A8E0219F22348A3D004D29A0 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0219D22348A3D004D29A0 /* DetailVC.swift */; };
 		A8E021A022348A3D004D29A0 /* DetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8E0219E22348A3D004D29A0 /* DetailVC.xib */; };
+		A8E021A3223598F2004D29A0 /* SortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E021A2223598F2004D29A0 /* SortType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		A8E0219B222CD809004D29A0 /* SalaryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryType.swift; sourceTree = "<group>"; };
 		A8E0219D22348A3D004D29A0 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		A8E0219E22348A3D004D29A0 /* DetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailVC.xib; sourceTree = "<group>"; };
+		A8E021A2223598F2004D29A0 /* SortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 				A8AA425C2227ACD900A445D4 /* WebService.swift */,
 				A8AA425E2228F62200A445D4 /* Result.swift */,
 				A8E0219B222CD809004D29A0 /* SalaryType.swift */,
+				A8E021A2223598F2004D29A0 /* SortType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			files = (
 				A8AA4259222650FF00A445D4 /* RootVC.swift in Sources */,
 				A8AA425F2228F62200A445D4 /* Result.swift in Sources */,
+				A8E021A3223598F2004D29A0 /* SortType.swift in Sources */,
 				A8E02196222C5BCB004D29A0 /* String+.swift in Sources */,
 				A8E0219A222CB1D7004D29A0 /* SearchBar+.swift in Sources */,
 				A8AA4264222B9F6900A445D4 /* RootCell.swift in Sources */,
