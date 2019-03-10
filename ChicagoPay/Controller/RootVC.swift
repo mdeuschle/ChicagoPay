@@ -96,6 +96,14 @@ class RootVC: UITableViewController {
         cell.configure(for: salaryType, salary: salary)
         return cell
     }
+    
+    // MARK: - Table view delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = DetailVC(nibName: nil, bundle: nil)
+        navigationController?.pushViewController(detailVC, animated: true)
+        UISegmentedControl.appearance(whenContainedInInstancesOf: [UISearchBar.self]).isHidden = true
+    }
 }
 
 extension RootVC: UISearchResultsUpdating, UISearchControllerDelegate {
@@ -111,6 +119,10 @@ extension RootVC: UISearchResultsUpdating, UISearchControllerDelegate {
             isFiltering = false
             downloadSalaries(for: salaryType) { }
         }
+    }
+    
+    func willPresentSearchController(_ searchController: UISearchController) {
+        print("H&&")
     }
 }
 

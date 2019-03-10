@@ -24,6 +24,8 @@
 		A8E02198222C9F9E004D29A0 /* SalaryHourlySegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E02197222C9F9E004D29A0 /* SalaryHourlySegmentControl.swift */; };
 		A8E0219A222CB1D7004D29A0 /* SearchBar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E02199222CB1D7004D29A0 /* SearchBar+.swift */; };
 		A8E0219C222CD809004D29A0 /* SalaryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0219B222CD809004D29A0 /* SalaryType.swift */; };
+		A8E0219F22348A3D004D29A0 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0219D22348A3D004D29A0 /* DetailVC.swift */; };
+		A8E021A022348A3D004D29A0 /* DetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8E0219E22348A3D004D29A0 /* DetailVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		A8E02197222C9F9E004D29A0 /* SalaryHourlySegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryHourlySegmentControl.swift; sourceTree = "<group>"; };
 		A8E02199222CB1D7004D29A0 /* SearchBar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchBar+.swift"; sourceTree = "<group>"; };
 		A8E0219B222CD809004D29A0 /* SalaryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryType.swift; sourceTree = "<group>"; };
+		A8E0219D22348A3D004D29A0 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		A8E0219E22348A3D004D29A0 /* DetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				A8AA4258222650FF00A445D4 /* RootVC.swift */,
+				A8E0219D22348A3D004D29A0 /* DetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				A8AA4262222B9F6900A445D4 /* RootCell.swift */,
 				A8AA4263222B9F6900A445D4 /* RootCell.xib */,
 				A8E02197222C9F9E004D29A0 /* SalaryHourlySegmentControl.swift */,
+				A8E0219E22348A3D004D29A0 /* DetailVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 				A8AA4265222B9F6900A445D4 /* RootCell.xib in Resources */,
 				A8AA422E22264B1400A445D4 /* Assets.xcassets in Resources */,
 				A8AA422C22264B0600A445D4 /* Main.storyboard in Resources */,
+				A8E021A022348A3D004D29A0 /* DetailVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +339,7 @@
 				A8E02196222C5BCB004D29A0 /* String+.swift in Sources */,
 				A8E0219A222CB1D7004D29A0 /* SearchBar+.swift in Sources */,
 				A8AA4264222B9F6900A445D4 /* RootCell.swift in Sources */,
+				A8E0219F22348A3D004D29A0 /* DetailVC.swift in Sources */,
 				A8AA425B2227AC1D00A445D4 /* Salary.swift in Sources */,
 				A8E02198222C9F9E004D29A0 /* SalaryHourlySegmentControl.swift in Sources */,
 				A8AA42612228FC8E00A445D4 /* SalaryStore.swift in Sources */,
